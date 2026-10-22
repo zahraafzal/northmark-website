@@ -13,79 +13,258 @@
     <header>
         <div class="container">
             <div class="logo"><a href="index.html">NORTHMARK</a></div>
+            
             <nav class="desktop-nav">
-                <div class="nav-item"><a href="index.html">HOME</a></div>
-                <div class="nav-item"><a href="shop.html">SHOP</a></div>
+                <div class="nav-item"><a href="index.html">NEW ARRIVALS</a></div>
+                <div class="nav-item"><a href="#collections">COLLECTIONS</a></div>
+                <div class="nav-item"><a href="shop.html">SHOP BY TYPE</a></div>
+                <div class="nav-item"><a href="shop.html?gender=men">MEN</a></div>
+                <div class="nav-item"><a href="shop.html?gender=women">WOMEN</a></div>
+                <div class="nav-item"><a href="sale.html" style="color: #C8102E;">SALE</a></div>
             </nav>
+            
             <div class="header-actions">
+                <button class="mobile-menu-toggle">☰</button>
                 <a href="login.html" class="icon-btn">👤</a>
-                <a href="cart.html" class="icon-btn">🛍️</a>
+                <a href="cart.html" class="icon-btn cart-icon">
+                    🛍️
+                    <span class="cart-badge">0</span>
+                </a>
             </div>
         </div>
     </header>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-menu">×</button>
+        <nav class="mobile-nav">
+            <a href="index.html">NEW ARRIVALS</a>
+            <a href="sale.html" style="color: #C8102E;">🔥 SALE</a>
+            <a href="shop.html">ALL PRODUCTS</a>
+            <a href="shop.html?gender=men">MEN</a>
+            <a href="shop.html?gender=women">WOMEN</a>
+            <a href="shop.html?category=hoodies">HOODIES</a>
+            <a href="shop.html?category=tshirts">T-SHIRTS</a>
+            <a href="shop.html?category=pants">PANTS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </div>
+
+    <!-- Filter Bar -->
+    <section style="background: #F4F1EA; padding: 24px 0; border-bottom: 1px solid #E0E0E0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                <div>
+                    <h1 id="pageTitle" style="font-size: 24px; margin: 0;">All Products</h1>
+                    <p id="productCount" style="font-size: 13px; color: #6E6E6E; margin: 4px 0 0;">Showing all products</p>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="filter-btn" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="men">Men</button>
+                    <button class="filter-btn" data-filter="women">Women</button>
+                    <button class="filter-btn" data-filter="hoodies">Hoodies</button>
+                    <button class="filter-btn" data-filter="tshirts">T-Shirts</button>
+                    <button class="filter-btn" data-filter="pants">Pants</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section-products">
         <div class="container">
-            <div class="section-header">
-                <h2>All Products</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded by JavaScript -->
             </div>
 
-            <div class="products-grid">
-                <div class="product-card">
-                    <a href="product.html" class="product-link">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Product">
-                        </div>
-                        <h3>Premium Black Tee</h3>
-                        <p class="price">$45.00</p>
-                    </a>
-                    <button class="btn-add-cart">ADD TO BAG</button>
-                </div>
-
-                <div class="product-card">
-                    <a href="product.html" class="product-link">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600" alt="Product">
-                        </div>
-                        <h3>Essential Hoodie</h3>
-                        <p class="price">$85.00</p>
-                    </a>
-                    <button class="btn-add-cart">ADD TO BAG</button>
-                </div>
-
-                <div class="product-card">
-                    <a href="product.html" class="product-link">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600" alt="Product">
-                        </div>
-                        <h3>Classic Crewneck</h3>
-                        <p class="price">$65.00</p>
-                    </a>
-                    <button class="btn-add-cart">ADD TO BAG</button>
-                </div>
-
-                <div class="product-card">
-                    <a href="product.html" class="product-link">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600" alt="Product">
-                        </div>
-                        <h3>Tailored Pants</h3>
-                        <p class="price">$95.00</p>
-                    </a>
-                    <button class="btn-add-cart">ADD TO BAG</button>
-                </div>
+            <div id="noResults" style="display: none; text-align: center; padding: 60px 20px;">
+                <p style="font-size: 18px; color: #6E6E6E;">No products found</p>
             </div>
         </div>
     </section>
 
     <footer class="main-footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>SHOP</h4>
+                    <a href="index.html">New Arrivals</a>
+                    <a href="sale.html" style="color: #C8102E;">Sale</a>
+                    <a href="shop.html?gender=men">Men</a>
+                    <a href="shop.html?gender=women">Women</a>
+                </div>
+                <div class="footer-col">
+                    <h4>ABOUT</h4>
+                    <a href="about.html">Our Story</a>
+                </div>
+                <div class="footer-col">
+                    <h4>HELP</h4>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>© 2026 MONARCH. All rights reserved.</p>
+                <p>© 2026 NORTHMARK. All rights reserved.</p>
+                <div class="payment-methods">
+                    <span>VISA</span>
+                    <span>MASTERCARD</span>
+                    <span>AMEX</span>
+                    <span>PAYPAL</span>
+                </div>
             </div>
         </div>
     </footer>
 
+    <style>
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #2B2B2B;
+            font-size: 11px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover {
+            background: #0B0B0B;
+            color: white;
+        }
+        .filter-btn.active {
+            background: #0B0B0B;
+            color: white;
+        }
+    </style>
+
     <script src="js/main.js"></script>
+    <script>
+        // Product Database
+        const products = [
+            { id: 1, name: 'Premium Black Tee', price: 45, category: 'tshirts', gender: 'men', image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80' },
+            { id: 2, name: 'Essential Hoodie', price: 85, category: 'hoodies', gender: 'men', image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80' },
+            { id: 3, name: 'Classic Crewneck', price: 65, category: 'hoodies', gender: 'men', image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&q=80' },
+            { id: 4, name: 'Tailored Pants', price: 95, category: 'pants', gender: 'men', image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&q=80' },
+            { id: 5, name: 'Graphic Tee', price: 40, category: 'tshirts', gender: 'men', image: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?w=600&q=80' },
+            { id: 6, name: 'Zip Hoodie', price: 75, category: 'hoodies', gender: 'men', image: 'https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?w=600&q=80' },
+            { id: 7, name: 'Cargo Pants', price: 110, category: 'pants', gender: 'men', image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80' },
+            { id: 8, name: 'Oversized Tee', price: 50, category: 'tshirts', gender: 'men', image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80' },
+            
+            { id: 9, name: 'Women\'s Crop Tee', price: 38, category: 'tshirts', gender: 'women', image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80' },
+            { id: 10, name: 'Women\'s Hoodie', price: 80, category: 'hoodies', gender: 'women', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80' },
+            { id: 11, name: 'Women\'s Joggers', price: 70, category: 'pants', gender: 'women', image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80' },
+            { id: 12, name: 'Women\'s Tank Top', price: 35, category: 'tshirts', gender: 'women', image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&q=80' },
+            { id: 13, name: 'Women\'s Pullover', price: 75, category: 'hoodies', gender: 'women', image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80' },
+            { id: 14, name: 'Women\'s Leggings', price: 55, category: 'pants', gender: 'women', image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80' }
+        ];
+
+        let currentFilter = 'all';
+
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const genderParam = urlParams.get('gender');
+        const categoryParam = urlParams.get('category');
+
+        // Set initial filter from URL
+        if (genderParam) {
+            currentFilter = genderParam;
+        } else if (categoryParam) {
+            currentFilter = categoryParam;
+        }
+
+        // Render products
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const noResults = document.getElementById('noResults');
+            const pageTitle = document.getElementById('pageTitle');
+            const productCount = document.getElementById('productCount');
+            
+            let filtered = products;
+            
+            if (currentFilter !== 'all') {
+                filtered = products.filter(p => 
+                    p.gender === currentFilter || p.category === currentFilter
+                );
+            }
+
+            // Update title
+            const titles = {
+                'all': 'All Products',
+                'men': 'Men\'s Collection',
+                'women': 'Women\'s Collection',
+                'hoodies': 'Hoodies',
+                'tshirts': 'T-Shirts',
+                'pants': 'Pants'
+            };
+            pageTitle.textContent = titles[currentFilter] || 'All Products';
+            productCount.textContent = `Showing ${filtered.length} product${filtered.length !== 1 ? 's' : ''}`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            grid.innerHTML = filtered.map(product => `
+                <div class="product-card">
+                    <a href="product.html?id=${product.id}" class="product-link">
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <h3>${product.name}</h3>
+                        <p class="price">$${product.price}.00</p>
+                    </a>
+                    <button class="btn-add-cart" data-product="${product.name}" data-price="${product.price}">ADD TO BAG</button>
+                </div>
+            `).join('');
+
+            // Re-attach cart button listeners
+            document.querySelectorAll('.btn-add-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productName = this.getAttribute('data-product');
+                    const productPrice = this.getAttribute('data-price');
+                    
+                    // Update cart badge
+                    const badge = document.querySelector('.cart-badge');
+                    if (badge) {
+                        let count = parseInt(badge.textContent) || 0;
+                        badge.textContent = count + 1;
+                    }
+                    
+                    // Show notification
+                    alert(`${productName} added to bag!`);
+                });
+            });
+
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === currentFilter) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Filter button clicks
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                currentFilter = this.getAttribute('data-filter');
+                renderProducts();
+                
+                // Update URL
+                const newUrl = currentFilter === 'all' 
+                    ? 'shop.html' 
+                    : `shop.html?${['men', 'women'].includes(currentFilter) ? 'gender' : 'category'}=${currentFilter}`;
+                window.history.pushState({}, '', newUrl);
+            });
+        });
+
+        // Initial render
+        renderProducts();
+    </script>
 </body>
 </html>
