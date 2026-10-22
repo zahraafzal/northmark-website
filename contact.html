@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | NORTHMARK</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-page { padding: 80px 20px; }
+        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; }
+        .contact-info h1 { font-size: 42px; margin-bottom: 20px; }
+        .contact-form { background: #F4F1EA; padding: 40px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #E0E0E0; }
+        .btn-submit { width: 100%; padding: 15px; background: #0B0B0B; color: white; border: none; font-size: 12px; letter-spacing: 1px; cursor: pointer; }
+        @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</div>
+
+    <header>
+        <div class="container">
+            <div class="logo"><a href="index.html">NORTHMARK</a></div>
+            <nav class="desktop-nav">
+                <div class="nav-item"><a href="index.html">HOME</a></div>
+                <div class="nav-item"><a href="shop.html">SHOP</a></div>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="icon-btn">👤</a>
+                <a href="cart.html" class="icon-btn">🛍️</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-page">
+        <div class="contact-layout">
+            <div class="contact-info">
+                <h1>Get In Touch</h1>
+                <p style="margin-bottom: 30px;">Have questions? We're here to help.</p>
+                
+                <div style="margin-bottom: 25px;">
+                    <h3 style="margin-bottom: 10px;">Email</h3>
+                    <p>support@monarch.com</p>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <h3 style="margin-bottom: 10px;">Phone</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 10px;">Hours</h3>
+                    <p>Monday - Friday: 9am - 6pm EST</p>
+                    <p>Response time: Within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2 style="margin-bottom: 25px;">Send Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="NAME*" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="EMAIL*" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="6" placeholder="MESSAGE*" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 MONARCH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message sent! We will respond within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

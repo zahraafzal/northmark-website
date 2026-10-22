@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Black Tee | NORTHMARK</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-page { padding: 60px 20px; }
+        .product-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; }
+        .product-images img { width: 100%; margin-bottom: 10px; }
+        .product-info h1 { font-size: 32px; margin-bottom: 15px; }
+        .price-large { font-size: 28px; font-weight: 600; margin: 20px 0; }
+        .option-group { margin: 25px 0; }
+        .option-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+        .size-btns button { padding: 12px 20px; margin-right: 10px; border: 1px solid #2B2B2B; background: white; cursor: pointer; }
+        .size-btns button.active { background: #0B0B0B; color: white; }
+        .add-to-bag { width: 100%; padding: 15px; background: #0B0B0B; color: white; border: none; font-size: 12px; letter-spacing: 1px; cursor: pointer; margin-top: 20px; }
+        @media (max-width: 768px) { .product-layout { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</div>
+
+    <header>
+        <div class="container">
+            <div class="logo"><a href="index.html">NORTHMARK</a></div>
+            <nav class="desktop-nav">
+                <div class="nav-item"><a href="index.html">HOME</a></div>
+                <div class="nav-item"><a href="shop.html">SHOP</a></div>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="icon-btn">👤</a>
+                <a href="cart.html" class="icon-btn">🛍️</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="product-page">
+        <div class="product-layout">
+            <div class="product-images">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800" alt="Product">
+                <img src="https://images.unsplash.com/photo-1622445275576-721325763afe?w=800" alt="Product">
+            </div>
+
+            <div class="product-info">
+                <h1>Premium Black Tee</h1>
+                <p style="color: #C9A227;">★★★★★ (128 reviews)</p>
+                <p class="price-large">$45.00</p>
+
+                <div class="option-group">
+                    <label>SIZE</label>
+                    <div class="size-btns">
+                        <button onclick="selectSize(this)">S</button>
+                        <button onclick="selectSize(this)" class="active">M</button>
+                        <button onclick="selectSize(this)">L</button>
+                        <button onclick="selectSize(this)">XL</button>
+                    </div>
+                </div>
+
+                <button class="add-to-bag" onclick="addToCart()">ADD TO BAG</button>
+
+                <div style="margin-top: 30px; padding: 20px; background: #F4F1EA;">
+                    <p style="font-size: 13px; margin-bottom: 8px;">🚚 Free shipping on orders over $150</p>
+                    <p style="font-size: 13px; margin-bottom: 8px;">↩️ Easy 14-day returns</p>
+                    <p style="font-size: 13px;">🔒 Secure checkout</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 MONARCH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectSize(btn) {
+            document.querySelectorAll('.size-btns button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+        function addToCart() {
+            alert('Added to bag!');
+            window.location.href = 'cart.html';
+        }
+    </script>
+</body>
+</html>

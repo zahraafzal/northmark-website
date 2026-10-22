@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | NORTHMARK</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .checkout-page { padding: 60px 20px; background: #F8F8F8; }
+        .checkout-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .checkout-form { background: white; padding: 40px; }
+        .form-section { margin-bottom: 30px; }
+        .form-section h2 { font-size: 20px; margin-bottom: 20px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 5px; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #E0E0E0; }
+        .order-summary { background: white; padding: 30px; height: fit-content; position: sticky; top: 20px; }
+        @media (max-width: 768px) { .checkout-layout { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</div>
+
+    <header>
+        <div class="container">
+            <div class="logo"><a href="index.html">NORTHMARK</a></div>
+        </div>
+    </header>
+
+    <section class="checkout-page">
+        <div class="checkout-layout">
+            <div class="checkout-form">
+                <form id="checkoutForm">
+                    <div class="form-section">
+                        <h2>Contact Information</h2>
+                        <div class="form-group">
+                            <label>EMAIL</label>
+                            <input type="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Shipping Address</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>FIRST NAME</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>LAST NAME</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>ADDRESS</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>CITY</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>ZIP CODE</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" style="width: 100%; padding: 15px; background: #0B0B0B; color: white; border: none; font-size: 12px; letter-spacing: 1px; cursor: pointer;">COMPLETE ORDER</button>
+                </form>
+            </div>
+
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+                    <span>Subtotal</span>
+                    <span>$130.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 20px; font-weight: 600; padding-top: 15px; border-top: 1px solid #E0E0E0; margin-top: 15px;">
+                    <span>Total</span>
+                    <span>$130.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Order placed successfully! (Demo)');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bag | NORTHMARK</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Simple Cart Styles */
+        .cart-section { padding: 60px 20px; min-height: 60vh; }
+        .cart-section h1 { text-align: center; margin-bottom: 40px; }
+        .cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .cart-items { border: 1px solid #E0E0E0; }
+        .cart-item { display: flex; gap: 20px; padding: 25px; border-bottom: 1px solid #E0E0E0; align-items: center; }
+        .cart-item img { width: 100px; height: 100px; object-fit: cover; }
+        .item-info { flex: 1; }
+        .item-info h3 { font-size: 16px; margin-bottom: 5px; }
+        .item-info p { font-size: 13px; color: #6E6E6E; margin-bottom: 10px; }
+        .item-price { font-weight: 600; }
+        .qty-control { display: flex; gap: 10px; align-items: center; }
+        .qty-btn { padding: 5px 15px; border: 1px solid #E0E0E0; background: white; cursor: pointer; }
+        .remove-btn { background: none; border: none; font-size: 20px; cursor: pointer; color: #6E6E6E; }
+        .cart-summary { border: 1px solid #E0E0E0; padding: 30px; height: fit-content; position: sticky; top: 100px; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .summary-row.total { font-size: 20px; font-weight: 600; padding-top: 15px; border-top: 1px solid #E0E0E0; margin-top: 15px; }
+        .btn-checkout { width: 100%; padding: 15px; background: #0B0B0B; color: white; border: none; font-size: 12px; letter-spacing: 1px; cursor: pointer; margin-top: 20px; }
+        .empty-cart { text-align: center; padding: 80px 20px; }
+        @media (max-width: 768px) { .cart-layout { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">FREE WORLDWIDE SHIPPING ON ORDERS OVER $150</div>
+
+    <header>
+        <div class="container">
+            <div class="logo"><a href="index.html">NORTHMARK</a></div>
+            <nav class="desktop-nav">
+                <div class="nav-item"><a href="index.html">HOME</a></div>
+                <div class="nav-item"><a href="shop.html">SHOP</a></div>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="icon-btn">👤</a>
+                <a href="cart.html" class="icon-btn">🛍️ <span class="cart-badge">2</span></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="cart-section">
+        <div class="container">
+            <h1>Shopping Bag</h1>
+            
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200" alt="Product">
+                        <div class="item-info">
+                            <h3>Premium Black Tee</h3>
+                            <p>Size: M | Color: Black</p>
+                            <p class="item-price">$45.00</p>
+                        </div>
+                        <div class="qty-control">
+                            <button class="qty-btn" onclick="updateQty(this, -1)">−</button>
+                            <span>1</span>
+                            <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeItem(this)">×</button>
+                    </div>
+
+                    <div class="cart-item">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=200" alt="Product">
+                        <div class="item-info">
+                            <h3>Essential Hoodie</h3>
+                            <p>Size: L | Color: Charcoal</p>
+                            <p class="item-price">$85.00</p>
+                        </div>
+                        <div class="qty-control">
+                            <button class="qty-btn" onclick="updateQty(this, -1)">−</button>
+                            <span>1</span>
+                            <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeItem(this)">×</button>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$130.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>FREE</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">$130.00</span>
+                    </div>
+                    <button class="btn-checkout" onclick="window.location.href='checkout.html'">PROCEED TO CHECKOUT</button>
+                    <p style="text-align: center; margin-top: 20px; font-size: 13px;">
+                        <a href="shop.html" style="color: #6E6E6E;">← Continue Shopping</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 MONARCH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function updateQty(btn, change) {
+            const qtySpan = btn.parentElement.querySelector('span');
+            let qty = parseInt(qtySpan.textContent);
+            qty += change;
+            if (qty < 1) qty = 1;
+            qtySpan.textContent = qty;
+        }
+
+        function removeItem(btn) {
+            if (confirm('Remove this item?')) {
+                btn.closest('.cart-item').remove();
+            }
+        }
+    </script>
+</body>
+</html>
