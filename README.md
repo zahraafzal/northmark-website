@@ -1,4 +1,4 @@
-# MONARCH - Premium Men's Apparel E-commerce Website
+# NORTHMARK - Premium Men's Apparel E-commerce Website
 
 A modern, premium e-commerce website for men's streetwear apparel with a dark, minimal aesthetic.
 
