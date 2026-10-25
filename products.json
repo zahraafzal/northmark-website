@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "name": "Classic Black T-Shirt",
+    "description": "Premium cotton t-shirt with modern fit. Perfect for casual wear.",
+    "price": 1999,
+    "category": "t-shirts",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+    "stock": 50,
+    "featured": true
+  },
+  {
+    "id": "2",
+    "name": "White Cotton T-Shirt",
+    "description": "Essential white tee made from 100% organic cotton.",
+    "price": 1799,
+    "category": "t-shirts",
+    "image": "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=500",
+    "stock": 45,
+    "featured": true
+  },
+  {
+    "id": "3",
+    "name": "Navy Blue Polo Shirt",
+    "description": "Classic polo shirt with ribbed collar and cuffs.",
+    "price": 2499,
+    "category": "polo",
+    "image": "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=500",
+    "stock": 35,
+    "featured": false
+  },
+  {
+    "id": "4",
+    "name": "Gray Hoodie",
+    "description": "Comfortable hoodie with kangaroo pocket and drawstring hood.",
+    "price": 3499,
+    "category": "hoodies",
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500",
+    "stock": 30,
+    "featured": true
+  },
+  {
+    "id": "5",
+    "name": "Denim Jacket",
+    "description": "Classic denim jacket with button closure and chest pockets.",
+    "price": 4999,
+    "category": "jackets",
+    "image": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500",
+    "stock": 20,
+    "featured": false
+  },
+  {
+    "id": "6",
+    "name": "Black Skinny Jeans",
+    "description": "Slim fit jeans with stretch fabric for ultimate comfort.",
+    "price": 3999,
+    "category": "jeans",
+    "image": "https://images.unsplash.com/photo-1542272454315-7f6de3b8d28e?w=500",
+    "stock": 40,
+    "featured": true
+  },
+  {
+    "id": "7",
+    "name": "Blue Denim Jeans",
+    "description": "Classic blue jeans with regular fit and 5-pocket design.",
+    "price": 3799,
+    "category": "jeans",
+    "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500",
+    "stock": 38,
+    "featured": false
+  },
+  {
+    "id": "8",
+    "name": "Striped Polo Shirt",
+    "description": "Stylish striped polo in navy and white combination.",
+    "price": 2699,
+    "category": "polo",
+    "image": "https://images.unsplash.com/photo-1626497764746-6dc36546b388?w=500",
+    "stock": 32,
+    "featured": false
+  },
+  {
+    "id": "9",
+    "name": "Graphic Print T-Shirt",
+    "description": "Trendy graphic tee with bold print design.",
+    "price": 2199,
+    "category": "t-shirts",
+    "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500",
+    "stock": 55,
+    "featured": false
+  },
+  {
+    "id": "10",
+    "name": "Green Bomber Jacket",
+    "description": "Lightweight bomber jacket with zip closure and side pockets.",
+    "price": 5499,
+    "category": "jackets",
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",
+    "stock": 15,
+    "featured": true
+  },
+  {
+    "id": "11",
+    "name": "Red Hoodie",
+    "description": "Bold red hoodie with fleece lining for extra warmth.",
+    "price": 3699,
+    "category": "hoodies",
+    "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500",
+    "stock": 28,
+    "featured": false
+  },
+  {
+    "id": "12",
+    "name": "Black Leather Jacket",
+    "description": "Premium leather jacket with asymmetric zip and quilted details.",
+    "price": 7999,
+    "category": "jackets",
+    "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500",
+    "stock": 10,
+    "featured": true
+  }
+]
