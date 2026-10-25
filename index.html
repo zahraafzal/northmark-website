@@ -1689,7 +1689,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadProducts() {
     try {
         const response = await fetch(
-            "http://127.0.0.1:8002/products"
+            "http://127.0.0.1:5001/api/products"
         );
 
         if (!response.ok) {
