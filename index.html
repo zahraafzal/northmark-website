@@ -944,6 +944,9 @@ header .container {
                     </div>
                 </div>
                 <div class="nav-item">
+                    <a href="sale.html" style="color: #C8102E; font-weight: 600;">SALE</a>
+                </div>
+                <div class="nav-item">
                     <a href="#men">MEN</a>
                 </div>
                 <div class="nav-item">
@@ -970,6 +973,7 @@ header .container {
             <a href="index.html">NEW ARRIVALS</a>
             <a href="#collections">COLLECTIONS</a>
             <a href="#shop">SHOP BY TYPE</a>
+            <a href="sale.html" style="color: #C8102E; font-weight: 600;">SALE</a>
             <a href="#men">MEN</a>
             <a href="#women">WOMEN</a>
             <a href="#about">ABOUT</a>
@@ -1689,7 +1693,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadProducts() {
     try {
         const response = await fetch(
-            "http://127.0.0.1:5001/api/products"
+            "http://127.0.0.1:8002/products"
         );
 
         if (!response.ok) {
