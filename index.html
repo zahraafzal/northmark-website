@@ -4,7 +4,907 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MONARCH | Premium Men's Apparel</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+/* ========================================
+   MONARCH - Premium Men's Apparel
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary-black: #0B0B0B;
+    --color-ivory-white: #FFFFFF;
+    --color-warm-ivory: #F4F1EA;
+    --color-signal-red: #C8102E;
+    --color-varsity-gold: #C9A227;
+    --color-charcoal: #2B2B2B;
+    --color-muted-grey: #6E6E6E;
+    --color-soft-black: #1A1A1A;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+    --spacing-xxl: 80px;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-charcoal);
+    background: var(--color-ivory-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-family: var(--font-serif);
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    font-family: var(--font-serif);
+}
+
+h3 {
+    font-size: clamp(18px, 2vw, 20px);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--color-varsity-gold);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+}
+
+.section-cta {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+.top-bar {
+    background: var(--color-primary-black);
+    color: var(--color-warm-ivory);
+    text-align: center;
+    padding: 10px var(--spacing-sm);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+header {
+    background: var(--color-ivory-white);
+    border-bottom: 1px solid #EEEEEE;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--spacing-md) 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--color-primary-black);
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+    padding: var(--spacing-sm) 0;
+}
+
+.nav-item > a:hover {
+    color: var(--color-varsity-gold);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-ivory-white);
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    padding: var(--spacing-sm) 0;
+    margin-top: var(--spacing-sm);
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px var(--spacing-md);
+    font-size: 12px;
+    color: var(--color-charcoal);
+    transition: background var(--transition-fast);
+}
+
+.dropdown a:hover {
+    background: var(--color-warm-ivory);
+    color: var(--color-primary-black);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.icon-btn {
+    font-size: 18px;
+    padding: var(--spacing-xs);
+    color: var(--color-charcoal);
+    transition: color var(--transition-fast);
+}
+
+.icon-btn:hover {
+    color: var(--color-varsity-gold);
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--color-signal-red);
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: var(--color-charcoal);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--color-ivory-white);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    transition: right var(--transition-normal);
+    padding: var(--spacing-lg);
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 36px;
+    color: var(--color-charcoal);
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xxl);
+}
+
+.mobile-nav a {
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid #E0E0E0;
+    color: var(--color-primary-black);
+}
+
+.hero {
+    background: var(--color-primary-black);
+    color: var(--color-ivory-white);
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    min-height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.hero-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--color-varsity-gold);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero h1 {
+    margin-bottom: var(--spacing-md);
+}
+
+.hero h1 em {
+    font-style: italic;
+    color: var(--color-warm-ivory);
+}
+
+.hero-desc {
+    font-size: 15px;
+    color: var(--color-warm-ivory);
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.hero-images {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.hero-product-card {
+    width: 250px;
+}
+
+.product-showcase {
+    background: var(--color-warm-ivory);
+    padding: var(--spacing-lg);
+}
+
+.product-showcase img {
+    width: 100%;
+}
+
+.features {
+    background: var(--color-warm-ivory);
+    padding: var(--spacing-lg) 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 32px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature-item h3 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.feature-item p {
+    font-size: 13px;
+    color: var(--color-muted-grey);
+}
+
+.section-products {
+    padding: var(--spacing-xxl) 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    text-align: center;
+}
+
+.product-link {
+    display: block;
+}
+
+.product-image {
+    position: relative;
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+    background: #F8F8F8;
+}
+
+.product-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.badge-new {
+    background: var(--color-signal-red);
+    color: white;
+}
+
+.product-card h3 {
+    font-size: 14px;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--color-charcoal);
+}
+
+.price {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary-black);
+}
+
+.btn-add-cart {
+    width: 100%;
+    padding: 12px;
+    background: var(--color-ivory-white);
+    border: 1px solid var(--color-charcoal);
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.btn-add-cart:hover {
+    background: var(--color-primary-black);
+    color: var(--color-ivory-white);
+}
+
+.section-collections {
+    padding: var(--spacing-xxl) 0;
+    background: var(--color-warm-ivory);
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.collection-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.collection-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.collection-card:hover img {
+    transform: scale(1.05);
+}
+
+.collection-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.collection-overlay h3 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.collection-overlay p {
+    font-size: 13px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.collection-link {
+    color: var(--color-varsity-gold);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.section-story {
+    background: var(--color-primary-black);
+    color: var(--color-ivory-white);
+    padding: 100px var(--spacing-lg);
+    text-align: center;
+}
+
+.story-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.story-content h2 {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+}
+
+.story-content p {
+    font-size: 15px;
+    color: var(--color-warm-ivory);
+    margin-bottom: var(--spacing-lg);
+}
+
+.link-arrow {
+    color: var(--color-varsity-gold);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.section-newsletter {
+    background: var(--color-primary-black);
+    color: var(--color-ivory-white);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    text-align: center;
+}
+
+.section-newsletter h2 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-newsletter p {
+    font-size: 14px;
+    color: var(--color-warm-ivory);
+    margin-bottom: var(--spacing-lg);
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px var(--spacing-md);
+    border: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.main-footer {
+    background: var(--color-primary-black);
+    color: var(--color-ivory-white);
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-col h4 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.footer-col a {
+    display: block;
+    color: var(--color-muted-grey);
+    font-size: 13px;
+    margin-bottom: 12px;
+    transition: color var(--transition-fast);
+}
+
+.footer-col a:hover {
+    color: var(--color-varsity-gold);
+}
+
+.footer-bottom {
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-charcoal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: var(--color-muted-grey);
+}
+
+.payment-methods {
+    display: flex;
+    gap: var(--spacing-sm);
+    font-size: 11px;
+    color: var(--color-muted-grey);
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--transition-fast);
+}
+
+.btn-primary {
+    background: var(--color-ivory-white);
+    color: var(--color-primary-black);
+}
+
+.btn-primary:hover {
+    background: var(--color-varsity-gold);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-ivory-white);
+    border: 1px solid var(--color-ivory-white);
+}
+
+.btn-secondary:hover {
+    background: var(--color-ivory-white);
+    color: var(--color-primary-black);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--color-charcoal);
+    color: var(--color-primary-black);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary-black);
+    color: var(--color-ivory-white);
+}
+
+.btn-gold {
+    background: var(--color-varsity-gold);
+    color: var(--color-ivory-white);
+    padding: 15px var(--spacing-lg);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.btn-gold {
+    background: var(--color-varsity-gold);
+    color: var(--color-ivory-white);
+    padding: 15px var(--spacing-lg);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--color-ivory-white);
+    padding: var(--spacing-xl);
+    border-radius: 0;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+.modal-small {
+    max-width: 400px;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 36px;
+    color: var(--color-charcoal);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-bottom: var(--spacing-lg);
+    font-size: 24px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: var(--spacing-md);
+}
+
+.search-results {
+    min-height: 200px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.auth-form input {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #E0E0E0;
+}
+
+.cart-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    background: #F8F8F8;
+    object-fit: cover;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.cart-item-details p {
+    font-size: 13px;
+    color: var(--color-muted-grey);
+}
+
+.cart-item-price {
+    font-weight: 600;
+}
+
+.remove-item {
+    color: var(--color-signal-red);
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .products-grid,
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid,
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .hero-images {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-product-card {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .products-grid,
+    .collections-grid,
+    .features-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .btn-gold {
+        width: 100%;
+    }
+}
+    </style>
 </head>
 <body>
 
@@ -34,34 +934,31 @@
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a href="shop.html">SHOP BY TYPE</a>
+                    <a href="#shop">SHOP BY TYPE</a>
                     <div class="dropdown">
-                        <a href="shop.html?category=tshirts">T-Shirts</a>
-                        <a href="shop.html?category=hoodies">Hoodies</a>
-                        <a href="shop.html?category=crewnecks">Crewnecks</a>
-                        <a href="shop.html?category=pants">Pants</a>
-                        <a href="shop.html?category=accessories">Accessories</a>
+                        <a href="#tshirts">T-Shirts</a>
+                        <a href="#hoodies">Hoodies</a>
+                        <a href="#crewnecks">Crewnecks</a>
+                        <a href="#pants">Pants</a>
+                        <a href="#accessories">Accessories</a>
                     </div>
                 </div>
                 <div class="nav-item">
-                    <a href="shop.html?gender=men">MEN</a>
+                    <a href="#men">MEN</a>
                 </div>
                 <div class="nav-item">
-                    <a href="shop.html?gender=women">WOMEN</a>
-                </div>
-                <div class="nav-item">
-                    <a href="sale.html" style="color: #C8102E;">SALE</a>
+                    <a href="#women">WOMEN</a>
                 </div>
             </nav>
 
             <div class="header-actions">
                 <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
-                <button class="icon-btn" aria-label="Search">🔍</button>
-                <a href="login.html" class="icon-btn" aria-label="Account">👤</a>
-                <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+                <button class="icon-btn search-btn" aria-label="Search">🔍</button>
+                <button class="icon-btn login-btn" aria-label="Account">👤</button>
+                <button class="icon-btn cart-icon cart-btn" aria-label="Cart">
                     🛍️
                     <span class="cart-badge">0</span>
-                </a>
+                </button>
             </div>
         </div>
     </header>
@@ -71,16 +968,86 @@
         <button class="close-menu">×</button>
         <nav class="mobile-nav">
             <a href="index.html">NEW ARRIVALS</a>
-            <a href="sale.html" style="color: #C8102E; font-weight: 700;">🔥 SALE</a>
             <a href="#collections">COLLECTIONS</a>
-            <a href="shop.html">SHOP BY TYPE</a>
-            <a href="shop.html?gender=men">MEN</a>
-            <a href="shop.html?gender=women">WOMEN</a>
-            <a href="about.html">ABOUT</a>
-            <a href="contact.html">CONTACT</a>
-            <a href="login.html">LOGIN</a>
-            <a href="cart.html">CART</a>
+            <a href="#shop">SHOP BY TYPE</a>
+            <a href="#men">MEN</a>
+            <a href="#women">WOMEN</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
         </nav>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="modal" id="searchModal">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <h2>Search Products</h2>
+            <input type="text" class="search-input" placeholder="Search for products..." autofocus>
+            <div class="search-results">
+                <p style="color: #6E6E6E; text-align: center; padding: 40px;">Start typing to search...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content modal-small">
+            <button class="modal-close">×</button>
+            <h2>Login</h2>
+            <form class="auth-form" id="loginForm">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 16px;">LOGIN</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px; font-size: 13px;">
+                Don't have an account? <a href="#" class="register-link" style="color: #C9A227; font-weight: 600;">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <button class="modal-close">×</button>
+            <h2>Shopping Bag</h2>
+            <div id="cartItems">
+                <p style="color: #6E6E6E; text-align: center; padding: 40px;">Your bag is empty</p>
+            </div>
+            <div class="cart-total" style="display: none;">
+                <div style="display: flex; justify-content: space-between; padding: 20px 0; border-top: 1px solid #E0E0E0; margin-top: 20px;">
+                    <strong>Total:</strong>
+                    <strong id="cartTotalAmount">$0.00</strong>
+                </div>
+                
+<button class="btn btn-primary" id="checkoutBtn" style="width: 100%;">CHECKOUT</button>
+
+<form id="checkoutForm" style="display: none; margin-top: 20px;">
+    <h3 style="margin-bottom: 15px;">Delivery Details</h3>
+
+    <label for="customerName">Full Name</label>
+    <input type="text" id="customerName" required
+        placeholder="Enter your full name"
+        style="width: 100%; padding: 12px; margin: 8px 0 15px; box-sizing: border-box;">
+
+    <label for="customerPhone">Phone Number</label>
+    <input type="tel" id="customerPhone" required
+        placeholder="03XXXXXXXXX"
+        style="width: 100%; padding: 12px; margin: 8px 0 15px; box-sizing: border-box;">
+
+    <label for="customerAddress">Complete Address</label>
+    <input type="text" id="customerAddress" required
+        placeholder="House number, street, city"
+        style="width: 100%; padding: 12px; margin: 8px 0 15px; box-sizing: border-box;">
+
+    <button type="submit" class="btn btn-primary" style="width: 100%;">
+        PLACE ORDER
+    </button>
+</form>
+
+<div id="orderConfirmation" style="display: none; margin-top: 20px;"></div>
+
+            </div>
+        </div>
     </div>
 
     <!-- Hero Section -->
@@ -90,8 +1057,8 @@
             <h1>Details that<br>define.<br><em>Quality that lasts.</em></h1>
             <p class="hero-desc">Heavyweight essentials and limited capsule drops — cut for everyday wear, built for years of it.</p>
             <div class="hero-buttons">
-                <a href="shop.html?gender=men" class="btn btn-primary">SHOP MEN</a>
-                <a href="shop.html?gender=women" class="btn btn-secondary">SHOP WOMEN</a>
+                <a href="#men" class="btn btn-primary">SHOP MEN</a>
+                <a href="#women" class="btn btn-secondary">SHOP WOMEN</a>
             </div>
         </div>
         <div class="hero-images">
@@ -144,10 +1111,10 @@
                 <h2>New Arrivals</h2>
             </div>
 
-            <div class="products-grid">
+            <div class="products-grid" id="products-grid">
                 <!-- Product 1 -->
                 <div class="product-card">
-                    <a href="product.html?id=1" class="product-link">
+                    <a href="#product1" class="product-link">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80" alt="Premium Black Tee">
                             <span class="badge badge-new">NEW</span>
@@ -160,7 +1127,7 @@
 
                 <!-- Product 2 -->
                 <div class="product-card">
-                    <a href="product.html?id=2" class="product-link">
+                    <a href="#product2" class="product-link">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" alt="Essential Hoodie">
                             <span class="badge badge-new">NEW</span>
@@ -173,7 +1140,7 @@
 
                 <!-- Product 3 -->
                 <div class="product-card">
-                    <a href="product.html?id=3" class="product-link">
+                    <a href="#product3" class="product-link">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&q=80" alt="Classic Crewneck">
                             <span class="badge badge-new">NEW</span>
@@ -186,7 +1153,7 @@
 
                 <!-- Product 4 -->
                 <div class="product-card">
-                    <a href="product.html?id=4" class="product-link">
+                    <a href="#product4" class="product-link">
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&q=80" alt="Tailored Pants">
                             <span class="badge badge-new">NEW</span>
@@ -199,93 +1166,13 @@
             </div>
 
             <div class="section-cta">
-                <a href="shop.html" class="btn btn-outline">VIEW ALL PRODUCTS</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SALE Section -->
-    <section class="section-products" style="background: #F4F1EA;">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-tag" style="color: #C8102E;">LIMITED TIME</p>
-                <h2>Sale - Up to 40% Off</h2>
-            </div>
-
-            <div class="products-grid">
-                <!-- Sale Product 1 -->
-                <div class="product-card">
-                    <a href="product.html?id=5" class="product-link">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80" alt="Varsity Jacket">
-                            <span class="badge" style="background: #C8102E; color: white;">-30%</span>
-                        </div>
-                        <h3>Varsity Jacket</h3>
-                        <p class="price">
-                            <span style="text-decoration: line-through; color: #6E6E6E; font-size: 13px;">$120.00</span>
-                            <span style="color: #C8102E; font-weight: 700; margin-left: 8px;">$84.00</span>
-                        </p>
-                    </a>
-                    <button class="btn-add-cart" data-product="Varsity Jacket" data-price="84">ADD TO BAG</button>
-                </div>
-
-                <!-- Sale Product 2 -->
-                <div class="product-card">
-                    <a href="product.html?id=6" class="product-link">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80" alt="Oversized Tee">
-                            <span class="badge" style="background: #C8102E; color: white;">-25%</span>
-                        </div>
-                        <h3>Oversized Tee</h3>
-                        <p class="price">
-                            <span style="text-decoration: line-through; color: #6E6E6E; font-size: 13px;">$60.00</span>
-                            <span style="color: #C8102E; font-weight: 700; margin-left: 8px;">$45.00</span>
-                        </p>
-                    </a>
-                    <button class="btn-add-cart" data-product="Oversized Tee" data-price="45">ADD TO BAG</button>
-                </div>
-
-                <!-- Sale Product 3 -->
-                <div class="product-card">
-                    <a href="product.html?id=7" class="product-link">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80" alt="Cargo Pants">
-                            <span class="badge" style="background: #C8102E; color: white;">-40%</span>
-                        </div>
-                        <h3>Cargo Pants</h3>
-                        <p class="price">
-                            <span style="text-decoration: line-through; color: #6E6E6E; font-size: 13px;">$110.00</span>
-                            <span style="color: #C8102E; font-weight: 700; margin-left: 8px;">$66.00</span>
-                        </p>
-                    </a>
-                    <button class="btn-add-cart" data-product="Cargo Pants" data-price="66">ADD TO BAG</button>
-                </div>
-
-                <!-- Sale Product 4 -->
-                <div class="product-card">
-                    <a href="product.html?id=8" class="product-link">
-                        <div class="product-image">
-                            <img src="https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?w=600&q=80" alt="Zip Hoodie">
-                            <span class="badge" style="background: #C8102E; color: white;">-35%</span>
-                        </div>
-                        <h3>Zip Hoodie</h3>
-                        <p class="price">
-                            <span style="text-decoration: line-through; color: #6E6E6E; font-size: 13px;">$95.00</span>
-                            <span style="color: #C8102E; font-weight: 700; margin-left: 8px;">$62.00</span>
-                        </p>
-                    </a>
-                    <button class="btn-add-cart" data-product="Zip Hoodie" data-price="62">ADD TO BAG</button>
-                </div>
-            </div>
-
-            <div class="section-cta">
-                <a href="sale.html" class="btn btn-outline" style="border-color: #C8102E; color: #C8102E;">VIEW ALL SALE ITEMS</a>
+                <a href="#shop" class="btn btn-outline">VIEW ALL PRODUCTS</a>
             </div>
         </div>
     </section>
 
     <!-- Collections -->
-    <section class="section-collections">
+    <section class="section-collections" id="collections">
         <div class="container">
             <div class="section-header">
                 <p class="section-tag">EXPLORE</p>
@@ -298,7 +1185,7 @@
                     <div class="collection-overlay">
                         <h3>MIDNIGHT COLLECTION</h3>
                         <p>Dark essentials for the modern wardrobe</p>
-                        <a href="shop.html?collection=midnight" class="collection-link">EXPLORE →</a>
+                        <a href="#midnight" class="collection-link">EXPLORE →</a>
                     </div>
                 </div>
 
@@ -307,7 +1194,7 @@
                     <div class="collection-overlay">
                         <h3>VARSITY CLASSICS</h3>
                         <p>Collegiate-inspired streetwear</p>
-                        <a href="shop.html?collection=varsity" class="collection-link">EXPLORE →</a>
+                        <a href="#varsity" class="collection-link">EXPLORE →</a>
                     </div>
                 </div>
 
@@ -316,7 +1203,7 @@
                     <div class="collection-overlay">
                         <h3>URBAN ESSENTIALS</h3>
                         <p>Everyday staples, elevated</p>
-                        <a href="shop.html?collection=urban" class="collection-link">EXPLORE →</a>
+                        <a href="#urban" class="collection-link">EXPLORE →</a>
                     </div>
                 </div>
             </div>
@@ -330,7 +1217,7 @@
                 <p class="section-tag">OUR PHILOSOPHY</p>
                 <h2>Details That Define.<br>Quality That Lasts.</h2>
                 <p>We believe in creating timeless pieces that combine premium materials with thoughtful design. Every stitch, every fabric choice, every detail matters.</p>
-                <a href="about.html" class="link-arrow">READ OUR STORY →</a>
+                <a href="#about" class="link-arrow">READ OUR STORY →</a>
             </div>
         </div>
     </section>
@@ -353,32 +1240,32 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>SHOP</h4>
-                    <a href="index.html">New Arrivals</a>
-                    <a href="shop.html?gender=men">Men</a>
-                    <a href="shop.html?gender=women">Women</a>
-                    <a href="shop.html?category=accessories">Accessories</a>
+                    <a href="#new">New Arrivals</a>
+                    <a href="#men">Men</a>
+                    <a href="#women">Women</a>
+                    <a href="#accessories">Accessories</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>ABOUT</h4>
-                    <a href="about.html">Our Story</a>
-                    <a href="#">Lookbook</a>
-                    <a href="#">Sustainability</a>
+                    <a href="#story">Our Story</a>
+                    <a href="#lookbook">Lookbook</a>
+                    <a href="#sustainability">Sustainability</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>HELP</h4>
-                    <a href="contact.html">Contact Us</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Shipping</a>
-                    <a href="#">Returns</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#shipping">Shipping</a>
+                    <a href="#returns">Returns</a>
                 </div>
 
                 <div class="footer-col">
                     <h4>LEGAL</h4>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Cookie Policy</a>
+                    <a href="#terms">Terms & Conditions</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#cookies">Cookie Policy</a>
                 </div>
             </div>
 
@@ -394,6 +1281,482 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+// Mobile Menu
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
+const closeMenu = document.querySelector('.close-menu');
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', function() {
+        mobileMenu.classList.add('active');
+    });
+}
+
+if (closeMenu) {
+    closeMenu.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+    });
+}
+
+document.addEventListener('click', function(event) {
+    if (mobileMenu && mobileMenu.classList.contains('active')) {
+        if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+            mobileMenu.classList.remove('active');
+        }
+    }
+});
+
+// Modal System
+const searchModal = document.getElementById('searchModal');
+const loginModal = document.getElementById('loginModal');
+const cartModal = document.getElementById('cartModal');
+
+const searchBtn = document.querySelector('.search-btn');
+const loginBtn = document.querySelector('.login-btn');
+const cartBtn = document.querySelector('.cart-btn');
+
+const modalCloses = document.querySelectorAll('.modal-close');
+
+// Open Search Modal
+if (searchBtn) {
+    searchBtn.addEventListener('click', function() {
+        searchModal.classList.add('active');
+    });
+}
+
+// Open Login Modal
+if (loginBtn) {
+    loginBtn.addEventListener('click', function() {
+        loginModal.classList.add('active');
+    });
+}
+
+// Open Cart Modal
+if (cartBtn) {
+    cartBtn.addEventListener('click', function() {
+        updateCartModal();
+        cartModal.classList.add('active');
+    });
+}
+
+// Close Modals
+modalCloses.forEach(closeBtn => {
+    closeBtn.addEventListener('click', function() {
+        searchModal.classList.remove('active');
+        loginModal.classList.remove('active');
+        cartModal.classList.remove('active');
+    });
+});
+
+// Close modal on background click
+document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+});
+
+// Search Functionality
+const searchInput = document.querySelector('.search-input');
+const searchResults = document.querySelector('.search-results');
+
+const products = [
+    { name: 'Premium Black Tee', price: 45, image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&q=80' },
+    { name: 'Essential Hoodie', price: 85, image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=300&q=80' },
+    { name: 'Classic Crewneck', price: 65, image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=300&q=80' },
+    { name: 'Tailored Pants', price: 95, image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=300&q=80' }
+];
+
+if (searchInput) {
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        
+        if (query === '') {
+            searchResults.innerHTML = '<p style="color: #6E6E6E; text-align: center; padding: 40px;">Start typing to search...</p>';
+            return;
+        }
+        
+        const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+        
+        if (filtered.length === 0) {
+            searchResults.innerHTML = '<p style="color: #6E6E6E; text-align: center; padding: 40px;">No products found</p>';
+            return;
+        }
+        
+        searchResults.innerHTML = filtered.map(p => `
+            <div style="display: flex; gap: 16px; padding: 16px; border-bottom: 1px solid #E0E0E0; cursor: pointer;">
+                <img src="${p.image}" style="width: 60px; height: 60px; object-fit: cover;">
+                <div style="flex: 1;">
+                    <h4 style="font-size: 14px; margin-bottom: 4px;">${p.name}</h4>
+                    <p style="font-size: 14px; font-weight: 600;">$${p.price}.00</p>
+                </div>
+            </div>
+        `).join('');
+    });
+}
+
+// Login Form
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showNotification('Login successful! Welcome back.');
+        loginModal.classList.remove('active');
+        this.reset();
+    });
+}
+
+// Cart Functionality
+let cartCount = 0;
+let cartItems = [];
+
+document.addEventListener('click', function(event) {
+    const button = event.target.closest('.btn-add-cart');
+    if (!button) return;
+
+    const productName = button.dataset.product;
+    const productPrice = Number(button.dataset.price);
+    const image = button.closest('.product-card').querySelector('img').src;
+
+    cartItems.push({
+        name: productName,
+        price: productPrice,
+        image: image
+    });
+
+    cartCount++;
+    updateCartBadge();
+    saveCart();
+    updateCartModal();
+    showNotification(`${productName} added to bag!`);
+});
+
+function updateCartBadge() {
+    const cartBadge = document.querySelector('.cart-badge');
+    if (cartBadge) {
+        cartBadge.textContent = cartCount;
+    }
+}
+
+function updateCartModal() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartTotal = document.querySelector('.cart-total');
+    const cartTotalAmount = document.getElementById('cartTotalAmount');
+    
+    if (cartItems.length === 0) {
+        cartItemsContainer.innerHTML = '<p style="color: #6E6E6E; text-align: center; padding: 40px;">Your bag is empty</p>';
+        cartTotal.style.display = 'none';
+        return;
+    }
+    
+    let total = 0;
+    cartItemsContainer.innerHTML = cartItems.map((item, index) => {
+        total += item.price;
+        return `
+            <div class="cart-item">
+                <img src="${item.image}" class="cart-item-image" alt="${item.name}">
+                <div class="cart-item-details">
+                    <h4>${item.name}</h4>
+                    <p class="cart-item-price">$${item.price}.00</p>
+                    <a class="remove-item" data-index="${index}">Remove</a>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    cartTotalAmount.textContent = `$${total.toFixed(2)}`;
+    cartTotal.style.display = 'block';
+    
+    // Add remove functionality
+    document.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            cartItems.splice(index, 1);
+            cartCount--;
+            updateCartBadge();
+            updateCartModal();
+            saveCart();
+            showNotification('Item removed from bag');
+        });
+    });
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: #0B0B0B;
+        color: white;
+        padding: 16px 24px;
+        border-radius: 4px;
+        font-size: 14px;
+        z-index: 9999;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}
+
+// Newsletter Form
+const newsletterForm = document.getElementById('newsletterForm');
+
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value;
+        
+        showNotification('Thank you for subscribing! Check your email for 10% off.');
+        emailInput.value = '';
+    });
+}
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                }
+            }
+        }
+    });
+});
+
+// LocalStorage Functions
+function loadCart() {
+    const savedCart = localStorage.getItem('cartItems');
+    const savedCount = localStorage.getItem('cartCount');
+    
+    if (savedCart) {
+        cartItems = JSON.parse(savedCart);
+    }
+    if (savedCount) {
+        cartCount = parseInt(savedCount);
+        updateCartBadge();
+    }
+}
+
+function saveCart() {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem('cartCount', cartCount);
+}
+
+/* Checkout and Order Confirmation */
+
+const checkoutBtn = document.getElementById('checkoutBtn');
+const checkoutForm = document.getElementById('checkoutForm');
+const orderConfirmation = document.getElementById('orderConfirmation');
+
+if (checkoutBtn && checkoutForm) {
+    checkoutBtn.addEventListener('click', function () {
+        if (cartItems.length === 0) {
+            showNotification('Your bag is empty!');
+            return;
+        }
+
+        checkoutForm.style.display = 'block';
+        checkoutBtn.style.display = 'none';
+    });
+
+    checkoutForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        if (cartItems.length === 0) {
+            showNotification('Your bag is empty!');
+            return;
+        }
+
+        const submitBtn = checkoutForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'PLACING ORDER...';
+
+        const total = cartItems.reduce(
+            (sum, item) => sum + Number(item.price),
+            0
+        );
+
+        const orderData = {
+            customer: {
+                name: document.getElementById('customerName').value.trim(),
+                email: 'customer@example.com', // Add a default or ask for email
+                phone: document.getElementById('customerPhone').value.trim()
+            },
+            shippingAddress: {
+                street: document.getElementById('customerAddress').value.trim(),
+                city: 'City', // You can add more fields
+                country: 'Pakistan'
+            },
+            items: cartItems.map(item => ({
+                name: item.name,
+                price: Number(item.price),
+                quantity: 1,
+                image: item.image || ''
+            })),
+            subtotal: total,
+            shippingCost: 0,
+            total: total,
+            paymentMethod: 'cod'
+        };
+
+        try {
+            const response = await fetch('http://localhost:5001/api/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(orderData)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || 'Order could not be placed.');
+            }
+
+            // Success! Show confirmation
+            orderConfirmation.style.display = 'block';
+            orderConfirmation.innerHTML = `
+                <h3>Thank you for your order!</h3>
+                <p>Your order number is: <strong>${result.order.orderNumber}</strong></p>
+                <p>Status: ${result.order.status}</p>
+                <p>Total: $${result.order.total}</p>
+            `;
+            showNotification('Order placed successfully!');
+
+
+           
+
+            cartItems = [];
+            cartCount = 0;
+            saveCart();
+            updateCartBadge();
+            updateCartModal();
+
+            checkoutForm.reset();
+            checkoutForm.style.display = 'none';
+            checkoutBtn.style.display = 'block';
+            checkoutBtn.disabled = true;
+            checkoutBtn.textContent = 'ORDER PLACED';
+
+        } catch (error) {
+            showNotification('Error: ' + error.message);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'PLACE ORDER';
+        }
+    });
+}
+// Clear old saved cart once
+localStorage.removeItem('cartItems');
+localStorage.removeItem('cartCount');
+cartItems = [];
+cartCount = 0;
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    loadCart();
+});
+    </script>
 </body>
+
+<script>
+
+async function loadProducts() {
+    try {
+        const response = await fetch(
+            "http://127.0.0.1:8002/products"
+        );
+
+        if (!response.ok) {
+            throw new Error("Could not load products");
+        }
+
+        const products = await response.json();
+        const grid = document.getElementById("products-grid");
+
+        if (!grid) {
+            console.error("Product grid not found");
+            return;
+        }
+
+        grid.innerHTML = "";
+
+        products.forEach((product) => {
+            const card = document.createElement("div");
+            card.className = "product-card";
+
+            const link = document.createElement("a");
+            link.className = "product-link";
+            link.href = "#product" + product.id;
+
+            const imageContainer = document.createElement("div");
+            imageContainer.className = "product-image";
+
+            const img = document.createElement("img");
+            img.src = product.image;
+            img.alt = product.name;
+
+            const title = document.createElement("h3");
+            title.textContent = product.name;
+
+            const price = document.createElement("p");
+            price.className = "price";
+            price.textContent = "$" + Number(product.price).toFixed(2);
+
+            imageContainer.appendChild(img);
+            link.appendChild(imageContainer);
+            link.appendChild(title);
+            link.appendChild(price);
+
+            const button = document.createElement("button");
+            button.className = "btn-add-cart";
+            button.dataset.product = product.name;
+            button.dataset.price = product.price;
+            button.textContent = "ADD TO BAG";
+
+            button.addEventListener("click", () => {
+                alert(product.name + " added to bag!");
+            });
+
+            card.appendChild(link);
+            card.appendChild(button);
+            grid.appendChild(card);
+        });
+
+        console.log("Products displayed:", products);
+    } catch (error) {
+        console.error("Backend connection failed:", error);
+    }
+}
+
+loadProducts();
+
+</script>
+
+
 </html>
