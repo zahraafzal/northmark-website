@@ -1,155 +1,676 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Return Policy - NORTHMARK</title>
+
+    <title>Return Policy | NORTHMARK</title>
+    <meta name="description" content="Read the NORTHMARK return policy, eligibility requirements, refund process, and return shipping information.">
+
     <style>
+        :root {
+            --black: #101010;
+            --white: #ffffff;
+            --cream: #f5f2eb;
+            --gold: #b79a68;
+            --gray: #777777;
+            --border: #e8e5df;
+            --green: #45664f;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #2B2B2B;
-            background: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
         }
-        
-        .header {
-            background: #0B0B0B;
-            color: #FFFFFF;
-            padding: 20px;
+
+        a {
+            color: inherit;
+        }
+
+        .announcement {
+            background: var(--black);
+            color: var(--white);
             text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 24px;
+            padding: 9px 15px;
+            font-size: 10px;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
+
+        .navbar {
+            min-height: 78px;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
         }
-        
-        h2 {
-            color: #0B0B0B;
-            margin: 30px 0 15px 0;
-            font-size: 20px;
-        }
-        
-        p, li {
-            margin-bottom: 15px;
-            color: #2B2B2B;
-        }
-        
-        ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .highlight {
-            background: #F4F1EA;
-            padding: 20px;
-            border-left: 4px solid #C8102E;
-            margin: 20px 0;
-        }
-        
-        .back-link {
-            display: inline-block;
-            background: #0B0B0B;
-            color: #FFFFFF;
-            padding: 12px 30px;
+
+        .logo {
+            color: var(--black);
             text-decoration: none;
-            margin-top: 30px;
-            letter-spacing: 1px;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 3px;
         }
-        
-        .back-link:hover {
-            background: #2B2B2B;
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-link {
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 5px;
+        }
+
+        .nav-link:hover {
+            border-color: var(--gold);
+        }
+
+        .hero {
+            background: var(--cream);
+            text-align: center;
+            padding: 76px 20px 70px;
+        }
+
+        .eyebrow {
+            color: #8d754c;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 6vw, 61px);
+            line-height: 1.15;
+            font-weight: normal;
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 570px;
+            margin: 0 auto;
+            color: #656565;
+            font-size: 14px;
+        }
+
+        .meta {
+            margin-top: 22px;
+            color: var(--gray);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .page-layout {
+            width: min(1100px, 88%);
+            margin: 55px auto 85px;
+            display: grid;
+            grid-template-columns: 255px minmax(0, 1fr);
+            gap: 55px;
+            align-items: start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 25px;
+            border: 1px solid var(--border);
+            padding: 25px 22px;
+            background: #fff;
+        }
+
+        .sidebar h3 {
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 17px;
+            text-transform: uppercase;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 9px 0;
+            color: #666;
+            text-decoration: none;
+            font-size: 12px;
+            border-bottom: 1px solid #f0eee9;
+        }
+
+        .sidebar a:hover {
+            color: #967747;
+        }
+
+        .sidebar a:last-child {
+            border-bottom: none;
+        }
+
+        .policy-content {
+            min-width: 0;
+        }
+
+        .return-banner {
+            background: var(--black);
+            color: var(--white);
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-bottom: 42px;
+        }
+
+        .return-icon {
+            width: 58px;
+            height: 58px;
+            flex-shrink: 0;
+            border: 1px solid #75684e;
+            color: #d2b47d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+
+        .return-banner h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 4px;
+        }
+
+        .return-banner p {
+            color: #d0d0d0;
+            font-size: 12px;
+        }
+
+        .policy-section {
+            scroll-margin-top: 25px;
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 17px;
+        }
+
+        .number {
+            color: #9b8050;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            font-weight: normal;
+        }
+
+        .policy-section p {
+            font-size: 13px;
+            color: #626262;
+            margin-bottom: 14px;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .policy-section li {
+            position: relative;
+            padding-left: 23px;
+            margin-bottom: 11px;
+            font-size: 13px;
+            color: #444;
+        }
+
+        .policy-section li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .warning-list li::before {
+            content: "—";
+            color: #9b8050;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .step {
+            padding: 20px;
+            border: 1px solid var(--border);
+            background: #fff;
+        }
+
+        .step-number {
+            color: #9b8050;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .step h3 {
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .step p {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .info-box {
+            background: var(--cream);
+            padding: 22px;
+            margin-top: 20px;
+        }
+
+        .info-box h3 {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            margin: 0;
+        }
+
+        .contact-card {
+            background: var(--cream);
+            padding: 28px;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 14px;
+            padding: 13px 0;
+            border-bottom: 1px solid #ded9cf;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-symbol {
+            width: 30px;
+            color: #947849;
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+
+        .contact-item a,
+        .contact-item span {
+            font-size: 12px;
+            color: #5e5e5e;
+            overflow-wrap: anywhere;
+        }
+
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer p {
+            color: #bcbcbc;
+            font-size: 11px;
+        }
+
+        .footer a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #d4bb91;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 760px) {
+            .navbar {
+                min-height: 68px;
+                padding: 16px 6%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero {
+                padding: 55px 22px;
+            }
+
+            .page-layout {
+                width: 90%;
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-top: 35px;
+            }
+
+            .sidebar {
+                position: static;
+                padding: 20px;
+            }
+
+            .sidebar nav {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                column-gap: 18px;
+            }
+
+            .return-banner {
+                padding: 22px;
+                gap: 15px;
+            }
+
+            .return-banner h2 {
+                font-size: 21px;
+            }
+
+            .section-heading h2 {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .return-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .return-banner {
+                align-items: flex-start;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="header">
-        <h1>NORTHMARK</h1>
+
+    <div class="announcement">
+        NORTHMARK &nbsp; | &nbsp; Built for Everyday Style
     </div>
-    
-    <div class="container">
-        <h1 style="font-size: 32px; margin-bottom: 10px;">Return Policy</h1>
-        <p style="color: #6E6E6E;">Last Updated: October 2026</p>
-        
-        <div class="highlight">
-            <strong>14-Day Return Window</strong><br>
-            We offer easy returns within 14 days of delivery. Your satisfaction is our priority.
+
+    <header class="navbar">
+        <a href="index.html" class="logo">NORTHMARK<span>.</span></a>
+        <a href="index.html" class="nav-link">← Back to Shop</a>
+    </header>
+
+    <section class="hero">
+        <div class="eyebrow">Customer Care</div>
+        <h1>Return Policy</h1>
+        <p>
+            We want you to feel confident in every NORTHMARK purchase.
+            Here's everything you need to know about returns and refunds.
+        </p>
+        <div class="meta">Last Updated: October 2026</div>
+    </section>
+
+    <main class="page-layout">
+
+        <aside class="sidebar">
+            <h3>On This Page</h3>
+            <nav>
+                <a href="#eligibility">Return Eligibility</a>
+                <a href="#non-returnable">Non-Returnable Items</a>
+                <a href="#how-to-return">How to Return</a>
+                <a href="#shipping">Return Shipping</a>
+                <a href="#refunds">Refunds</a>
+                <a href="#exchanges">Exchanges</a>
+                <a href="#damaged">Damaged Items</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </aside>
+
+        <div class="policy-content">
+
+            <div class="return-banner">
+                <div class="return-icon">↶</div>
+                <div>
+                    <h2>14-Day Return Window</h2>
+                    <p>
+                        Eligible items can be returned within 14 days
+                        of delivery, subject to the conditions below.
+                    </p>
+                </div>
+            </div>
+
+            <section class="policy-section" id="eligibility">
+                <div class="section-heading">
+                    <span class="number">01</span>
+                    <h2>Return Eligibility</h2>
+                </div>
+
+                <p>To qualify for a return, your item must meet all of the following conditions:</p>
+
+                <ul>
+                    <li>Unworn, unwashed, and in its original condition.</li>
+                    <li>All original tags must remain attached.</li>
+                    <li>The return must be requested within 14 days of delivery.</li>
+                    <li>Original packaging should be included where possible.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section" id="non-returnable">
+                <div class="section-heading">
+                    <span class="number">02</span>
+                    <h2>Non-Returnable Items</h2>
+                </div>
+
+                <p>For the following items, returns are not accepted under this policy:</p>
+
+                <ul class="warning-list">
+                    <li>Final sale items clearly marked as final sale.</li>
+                    <li>Items specifically marked as non-returnable.</li>
+                    <li>Items damaged after delivery.</li>
+                    <li>Items returned without their original tags.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section" id="how-to-return">
+                <div class="section-heading">
+                    <span class="number">03</span>
+                    <h2>How to Return</h2>
+                </div>
+
+                <p>Follow these four steps to start your return:</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <h3>Contact Our Team</h3>
+                        <p>Email returns@northmark.com with your order number.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <h3>Pack Your Item</h3>
+                        <p>Securely pack the item, including its original tags.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <h3>Ship Your Return</h3>
+                        <p>Use the return address provided by our team via email.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">04</div>
+                        <h3>Refund Processing</h3>
+                        <p>We aim to process eligible refunds within 5–7 business days.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="policy-section" id="shipping">
+                <div class="section-heading">
+                    <span class="number">04</span>
+                    <h2>Return Shipping</h2>
+                </div>
+
+                <p>Return shipping costs are handled as follows:</p>
+
+                <ul>
+                    <li><strong>Standard returns:</strong> The customer pays the return shipping cost.</li>
+                    <li><strong>Wrong or defective items:</strong> NORTHMARK covers return shipping.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section" id="refunds">
+                <div class="section-heading">
+                    <span class="number">05</span>
+                    <h2>Refund Method & Timing</h2>
+                </div>
+
+                <p>Refunds are issued to the original payment method. Estimated processing times are:</p>
+
+                <ul>
+                    <li><strong>Credit or debit card:</strong> 5–7 business days.</li>
+                    <li><strong>PayPal:</strong> 3–5 business days.</li>
+                    <li><strong>Bank transfer:</strong> 7–10 business days.</li>
+                </ul>
+
+                <div class="info-box">
+                    <h3>Please Note</h3>
+                    <p>
+                        The timeframes above are estimates. Your bank or payment
+                        provider may require additional time for the refund to appear.
+                    </p>
+                </div>
+            </section>
+
+            <section class="policy-section" id="exchanges">
+                <div class="section-heading">
+                    <span class="number">06</span>
+                    <h2>Exchanges</h2>
+                </div>
+
+                <p>Direct exchanges are currently unavailable. If you need a different size or colour:</p>
+
+                <ul">
+                    <li>Request a return for your original eligible item.</li>
+                    <li>Place a new order for the size or colour you prefer.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section" id="damaged">
+                <div class="section-heading">
+                    <span class="number">07</span>
+                    <h2>Defective or Damaged Items</h2>
+                </div>
+
+                <p>If your order arrives damaged, defective, or incorrect, please:</p>
+
+                <ul>
+                    <li>Contact us within 48 hours of delivery.</li>
+                    <li>Include clear photos showing the issue.</li>
+                    <li>Wait for our team to provide return instructions and a prepaid return label where applicable.</li>
+                    <li>We will arrange an eligible full refund or replacement.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section" id="contact">
+                <div class="section-heading">
+                    <span class="number">08</span>
+                    <h2>Need Help?</h2>
+                </div>
+
+                <p>Our team is here to help with your return questions.</p>
+
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <div class="contact-symbol">✉</div>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:returns@northmark.com">returns@northmark.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-symbol">☎</div>
+                        <div>
+                            <strong>Phone</strong>
+                            <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-symbol">◷</div>
+                        <div>
+                            <strong>Response Time</strong>
+                            <span>Within 24 hours</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
-        
-        <h2>1. Return Eligibility</h2>
-        <p>To be eligible for a return, your item must be:</p>
-        <ul>
-            <li>Unworn, unwashed, and in original condition</li>
-            <li>With all original tags attached</li>
-            <li>Returned within 14 days of delivery</li>
-            <li>In original packaging (if possible)</li>
-        </ul>
-        
-        <h2>2. Non-Returnable Items</h2>
-        <p>The following items cannot be returned:</p>
-        <ul>
-            <li>Final sale items (marked as such)</li>
-            <li>Items marked as non-returnable</li>
-            <li>Items damaged after delivery</li>
-            <li>Items without original tags</li>
-        </ul>
-        
-        <h2>3. How to Return</h2>
-        <p><strong>Step 1:</strong> Email us at returns@northmark.com with your order number</p>
-        <p><strong>Step 2:</strong> Pack your item securely in original packaging</p>
-        <p><strong>Step 3:</strong> Ship to our return address (provided via email)</p>
-        <p><strong>Step 4:</strong> We'll process your refund within 5-7 business days</p>
-        
-        <h2>4. Return Shipping</h2>
-        <p><strong>Who Pays Return Shipping?</strong></p>
-        <ul>
-            <li><strong>Customer:</strong> Standard returns - you pay return shipping</li>
-            <li><strong>We Pay:</strong> Defective items or wrong items sent</li>
-        </ul>
-        
-        <h2>5. Refund Method</h2>
-        <p>Refunds are issued to your original payment method:</p>
-        <ul>
-            <li>Credit/Debit Card: 5-7 business days</li>
-            <li>PayPal: 3-5 business days</li>
-            <li>Bank Transfer: 7-10 business days</li>
-        </ul>
-        
-        <h2>6. Exchanges</h2>
-        <p>We currently do not offer direct exchanges. If you need a different size or color:</p>
-        <ul>
-            <li>Return your original item for a refund</li>
-            <li>Place a new order for the item you want</li>
-        </ul>
-        
-        <h2>7. Defective or Damaged Items</h2>
-        <p>If you received a defective or damaged item:</p>
-        <ul>
-            <li>Contact us within 48 hours of delivery</li>
-            <li>Send photos of the defect/damage</li>
-            <li>We'll provide a prepaid return label</li>
-            <li>Full refund or replacement will be issued</li>
-        </ul>
-        
-        <h2>8. Contact Us</h2>
-        <p>Questions about returns?</p>
-        <p>📧 Email: returns@northmark.com</p>
-        <p>📞 Phone: +1 (555) 123-4567</p>
-        <p>⏰ Response Time: Within 24 hours</p>
-        
-        <a href="index.html" class="back-link">← BACK TO HOME</a>
-    </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">NORTHMARK<span>.</span></div>
+        <p>Designed for everyday style. Made to move with you.</p>
+        <a href="index.html">← Return to Homepage</a>
+        <p style="margin-top: 22px;">© 2026 NORTHMARK. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
