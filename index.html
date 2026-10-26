@@ -1725,7 +1725,7 @@ const products = data.products;
             img.alt = product.name;
 
             const title = document.createElement("h3");
-            title.textContent = product.name;
+                        title.textContent = product.name;
 
             const price = document.createElement("p");
             price.className = "price";
@@ -1742,10 +1742,6 @@ const products = data.products;
             button.dataset.price = product.price;
             button.textContent = "ADD TO BAG";
 
-            button.addEventListener("click", () => {
-                alert(product.name + " added to bag!");
-            });
-
             card.appendChild(link);
             card.appendChild(button);
             grid.appendChild(card);
@@ -1755,8 +1751,6 @@ const products = data.products;
     } catch (error) {
         console.error("Backend connection failed:", error);
     }
-}
-
 loadProducts();
 
 </script>
